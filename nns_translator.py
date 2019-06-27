@@ -2,7 +2,7 @@ import re
 
 def nns_translator():
 	progression = input('Enter NNS progression:\n').replace('.', '')
-	key = input('Enter key:\n').upper()
+	key = input('\nEnter key:\n').upper()
 	rpre = r'-[1-7](?![x:])\w*(?!:)'
 	rpost = r'[1-7]-(?![x:])\w*(?!:)'
 	rno = r'[1-7](?![x:])\w*(?!:)'
@@ -27,7 +27,7 @@ def nns_translator():
 			
 		progression = re.sub(r'(?<![\w-])'+nnum+r'(?![\w-])', chord, progression)
 		
-	print(progression + '\n')
+	print('\n{}\n---\n'.format(progression))
 	
 	
 if __name__ == '__main__':
