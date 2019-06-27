@@ -3,9 +3,9 @@ import re
 def nns_translator():
 	progression = input('Enter NNS progression:\n').replace('.', '')
 	key = input('Enter key:\n').upper()
-	rpre = r'-[1-7](?![x:])[\w\d]*(?!:)'
-	rpost = r'[1-7]-(?![x:])[\w\d]*(?!:)'
-	rno = r'[1-7](?![x:])[\w\d]*(?![:.])'
+	rpre = r'-[1-7](?![x:])\w*(?!:)'
+	rpost = r'[1-7]-(?![x:])\w*(?!:)'
+	rno = r'[1-7](?![x:])\w*(?!:)'
 	r = '{}|{}|{}'.format(rpre, rpost, rno)
 	nnums = re.findall(r, progression)
 	
