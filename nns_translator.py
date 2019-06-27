@@ -7,9 +7,7 @@ def nns_translator():
 	rpost = r'[1-7]-(?![x:])[\w\d]*(?!:)'
 	rno = r'[1-7](?![x:])[\w\d]*(?![:.])'
 	r = '{}|{}|{}'.format(rpre, rpost, rno)
-	# regex = r'-[1-7](?![x\:])[\w\d]*|[1-7]-(?![x\:])[\w\d]*|[1-7](?![x\:])[\w\d]*'
 	nnums = re.findall(r, progression)
-	print(nnums)
 	
 	chlist = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 	notelist = [1, 3, 5, 6, 8, 10, 12]
