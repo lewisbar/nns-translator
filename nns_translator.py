@@ -1,14 +1,18 @@
 import re
 
 def nns_translator():
-	progression = input('Enter NNS progression:\n').replace('.', '')
-	key = input('Enter key:\n').upper()
+	print('Enter NNS progression. Type "-" (hyphen) on a new line when you\'re done.\n')
+
+	# Takes input lines until a line with only a hyphen occurs. That way, the user can paste multiline text.
+	progression = '\n'.join(iter(input, '-')).replace('.', '')
+
+	key = input('\nEnter key (in major):\n').upper()
 	rpre = r'-[1-7](?![x:])[\w\d]*(?!:)'
 	rpost = r'[1-7]-(?![x:])[\w\d]*(?!:)'
 	rno = r'[1-7](?![x:])[\w\d]*(?![:.])'
 	r = '{}|{}|{}'.format(rpre, rpost, rno)
 	nnums = re.findall(r, progression)
-	
+
 	chlist = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 	notelist = [1, 3, 5, 6, 8, 10, 12]
 	
@@ -27,9 +31,8 @@ def nns_translator():
 			
 		progression = re.sub(r'(?<![\w-])'+nnum+r'(?![\w-])', chord, progression)
 		
-	print(progression + '\n')
+	print('---\nTranslation:\n{}\n'.format(progression))
 	
 	
 if __name__ == '__main__':
-	while True:
-		nns_translator()
+	nns_translator()
