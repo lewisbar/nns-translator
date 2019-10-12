@@ -4,7 +4,7 @@ def nns_translator():
 	print('Enter NNS progression. Type "-" (hyphen) on a new line when you\'re done.\n')
 
 	# Takes input lines until a line with only a hyphen occurs. That way, the user can paste multiline text.
-	progression = '\n'.join(iter(input, '-')).replace('.', '')
+	progression = '\n'.join(iter(input, '-')).replace('^', '')
 
 	key = input('\nEnter key (in major):\n').upper()
 	rpre = r'-[1-7](?![x:])[\w\d]*(?!:)'
