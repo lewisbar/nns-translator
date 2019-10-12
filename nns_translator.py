@@ -7,9 +7,10 @@ def nns_translator():
 	progression = '\n'.join(iter(input, '-')).replace('^', '')
 
 	key = input('\nEnter key (in major):\n').upper()
-	rpre = r'-[1-7](?![x:])[\w\d]*(?!:)'
-	rpost = r'[1-7]-(?![x:])[\w\d]*(?!:)'
-	rno = r'[1-7](?![x:])[\w\d]*(?![:.])'
+
+	rpre = r'-[1-7](?![x:])\w*(?!:)'
+	rpost = r'[1-7]-(?![x:])\w*(?!:)'
+	rno = r'[1-7](?![x:])\w*(?!:)'
 	r = '{}|{}|{}'.format(rpre, rpost, rno)
 	nnums = re.findall(r, progression)
 
