@@ -8,6 +8,7 @@ def nns_translator():
 
 	key = input('\nEnter key (in major):\n').upper()
 
+    # Construct the regex to find nashville number units
 	rpre = r'-[1-7](?![x:])\w*(?!:)'
 	rpost = r'[1-7]-(?![x:])\w*(?!:)'
 	rno = r'[1-7](?![x:])\w*(?!:)'
