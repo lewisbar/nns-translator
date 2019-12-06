@@ -1,4 +1,5 @@
 import re
+import pyperclip
 
 def nns_translator():
 	print('Enter NNS progression. Type "-" (hyphen) on a new line when you\'re done.\n')
@@ -34,6 +35,8 @@ def nns_translator():
 		progression = re.sub(r'(?<![\w-])'+nnum+r'(?![\w-])', chord, progression)
 		
 	print('---\nTranslation:\n{}\n'.format(progression))
+	pyperclip.copy(progression)
+	print('Translation copied to clipboard.')
 	
 	
 if __name__ == '__main__':
